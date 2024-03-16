@@ -4,6 +4,8 @@
  */
 package Song;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author joshuatupas
@@ -13,7 +15,13 @@ public class MusicGUI extends javax.swing.JFrame {
     /**
      * Creates new form MusicGUI
      */
+    Playlist playlist;
+    Playlist rapMusic;
+    Playlist popMusic;
     public MusicGUI() {
+        popMusic = new Playlist ();
+        rapMusic = new Playlist ();
+        playlist = new Playlist ();
         initComponents();
     }
 
@@ -29,12 +37,25 @@ public class MusicGUI extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        addBTN = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        artistTF = new javax.swing.JTextField();
+        titleTF = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        moveBTN = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        likedSongTA = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        rapTA = new javax.swing.JTextArea();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,13 +64,46 @@ public class MusicGUI extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Add");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 480, -1, -1));
+        addBTN.setText("Add");
+        addBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBTNActionPerformed(evt);
+            }
+        });
+        jPanel2.add(addBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
 
         jButton2.setText("Delete");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, -1, -1));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        jLabel2.setText("Artist:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+        jPanel2.add(artistTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 53, 130, 30));
+        jPanel2.add(titleTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 130, 30));
+
+        jLabel3.setText("Title:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
+
+        jButton5.setText("Print");
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, -1, -1));
+
+        jButton6.setText("Size");
+        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
+
+        moveBTN.setText("Move");
+        moveBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moveBTNActionPerformed(evt);
+            }
+        });
+        jPanel2.add(moveBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 420, -1, -1));
+
+        likedSongTA.setColumns(20);
+        likedSongTA.setRows(5);
+        jScrollPane3.setViewportView(likedSongTA);
+
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 330, 120));
+
+        jTabbedPane1.addTab("Liked Songs", jPanel2);
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -59,10 +113,36 @@ public class MusicGUI extends javax.swing.JFrame {
         jButton4.setText("Pause");
         jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, -1, -1));
 
-        jButton5.setText("Delete");
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, -1, -1));
+        rapTA.setColumns(20);
+        rapTA.setRows(5);
+        jScrollPane1.setViewportView(rapTA);
 
-        jTabbedPane1.addTab("tab3", jPanel3);
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 680, 210));
+
+        jTabbedPane1.addTab("Rap", jPanel3);
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(249, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Pop", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,6 +157,19 @@ public class MusicGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
+        if (artistTF.getText().isEmpty() == true || titleTF.getText().isEmpty() == true) {
+            JOptionPane.showMessageDialog(null , "Please enter the title and the artist.");
+        } else {
+            playlist.addMusic();
+        }
+
+    }//GEN-LAST:event_addBTNActionPerformed
+
+    private void moveBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveBTNActionPerformed
+        playlist.moveToGenre();
+    }//GEN-LAST:event_moveBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,14 +207,27 @@ public class MusicGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton addBTN;
+    public static javax.swing.JTextField artistTF;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea2;
+    public static javax.swing.JTextArea likedSongTA;
+    private javax.swing.JButton moveBTN;
+    public static javax.swing.JTextArea rapTA;
+    public static javax.swing.JTextField titleTF;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,10 +10,11 @@ package Song;
  */
 public interface Interface {
     public boolean isEmpty();
-    public int size();
-    public Object get(int index);
-    public void remove(int index);
-    public void add(int index, Object theElement);
-    //public void add(Object element);
-    public void printList();
+    public int countMusic();
+    public Object get(); 
+    public void removeMusic(); 
+    public void addMusic(); 
+    public void printList(); 
+    public void moveToGenre(); 
+    public void RepeatPlaylist(); 
 }
