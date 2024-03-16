@@ -34,6 +34,7 @@ public class Playlist implements Interface {
     public boolean isEmpty() {
         return (size == 0);
     }
+    
 
     private void setCurrent(int index) {
         curr = head; 
@@ -75,6 +76,8 @@ public class Playlist implements Interface {
         }
         size++;
         JOptionPane.showMessageDialog(null, "Added song: Title: " + title + ", Artist: " + artist);
+        titleTF.setText("");
+        artistTF.setText("");
     }
 
     @Override
@@ -94,7 +97,9 @@ public class Playlist implements Interface {
 
     @Override
     public Object get() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int index = size;
+        setCurrent(index);
+        return curr.getElement();
     }
 
     @Override
@@ -116,8 +121,8 @@ public class Playlist implements Interface {
 
     @Override
     public void moveToGenre() {
-        if (last != null) {
-            Music song = (Music) last.getElement();
+        if (!isEmpty()) {
+            Music song = (Music) get();
             String selectedGenre = (String) genreCB.getSelectedItem();
             if ("Rap".equals(selectedGenre)) {
                 rapTA.setText(song.toString());
@@ -150,6 +155,11 @@ public class Playlist implements Interface {
         head = null;
         last = null;
         size = 0;
+        titleTF.setText("");
+        artistTF.setText("");
+        rapTA.setText("");
+        popTA.setText("");
         JOptionPane.showMessageDialog(null, "Playlist has been reset.");
+
     }
 }

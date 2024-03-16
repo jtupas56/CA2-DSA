@@ -51,13 +51,15 @@ public class MusicGUI extends javax.swing.JFrame {
         searchTF = new javax.swing.JTextField();
         createBTN = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         rapTA = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         popTA = new javax.swing.JTextArea();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,12 +82,12 @@ public class MusicGUI extends javax.swing.JFrame {
         jPanel2.add(deleteBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
 
         jLabel2.setText("Artist:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
-        jPanel2.add(artistTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 53, 130, 30));
-        jPanel2.add(titleTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 130, 30));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
+        jPanel2.add(artistTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 130, 30));
+        jPanel2.add(titleTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 130, 30));
 
         jLabel3.setText("Title:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
         printMusics.setText("Print");
         printMusics.addActionListener(new java.awt.event.ActionListener() {
@@ -109,13 +111,13 @@ public class MusicGUI extends javax.swing.JFrame {
                 moveBTNActionPerformed(evt);
             }
         });
-        jPanel2.add(moveBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 50, -1, -1));
+        jPanel2.add(moveBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, -1, -1));
 
         genreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pop", "Rap" }));
-        jPanel2.add(genreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 50, 130, 30));
+        jPanel2.add(genreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 130, 30));
 
         jLabel1.setText("Genre:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, -1, -1));
 
         searchBTN.setText("Search");
         searchBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -123,8 +125,8 @@ public class MusicGUI extends javax.swing.JFrame {
                 searchBTNActionPerformed(evt);
             }
         });
-        jPanel2.add(searchBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 150, -1, -1));
-        jPanel2.add(searchTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, 120, 30));
+        jPanel2.add(searchBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, -1, -1));
+        jPanel2.add(searchTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 120, 30));
 
         createBTN.setText("Create Playlist");
         createBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -138,39 +140,82 @@ public class MusicGUI extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton3.setText("Next");
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 470, -1, -1));
-
-        jButton4.setText("Pause");
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, -1, -1));
-
         rapTA.setColumns(20);
         rapTA.setRows(5);
         jScrollPane1.setViewportView(rapTA);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 680, 210));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 770, 250));
+
+        jPanel1.setBackground(new java.awt.Color(255, 153, 0));
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel4.setText("Rap Musics");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(351, 351, 351)
+                .addComponent(jLabel4)
+                .addContainerGap(384, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel4)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 100));
 
         jTabbedPane1.addTab("Rap", jPanel3);
 
         popTA.setColumns(20);
         popTA.setRows(5);
+        popTA.setPreferredSize(new java.awt.Dimension(200, 90));
         jScrollPane2.setViewportView(popTA);
+
+        jPanel5.setBackground(new java.awt.Color(255, 153, 0));
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel5.setText("Pop Musics");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(351, 351, 351)
+                .addComponent(jLabel5)
+                .addContainerGap(385, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel5)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 772, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Pop", jPanel4);
@@ -277,14 +322,16 @@ public class MusicGUI extends javax.swing.JFrame {
     private javax.swing.JButton createBTN;
     private javax.swing.JButton deleteBTN;
     public static javax.swing.JComboBox<String> genreCB;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
