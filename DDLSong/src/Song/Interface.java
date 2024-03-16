@@ -11,7 +11,6 @@ package Song;
 public interface Interface {
     public boolean isEmpty();
     public int countMusic();
-    public Object get(); 
     public void removeMusic(); 
     public void addMusic(); 
     public void printList(); 

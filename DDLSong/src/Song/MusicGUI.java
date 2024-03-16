@@ -50,16 +50,29 @@ public class MusicGUI extends javax.swing.JFrame {
         searchBTN = new javax.swing.JButton();
         searchTF = new javax.swing.JTextField();
         createBTN = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         rapTA = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        addBTN2 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        artistTF2 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        titleTF2 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         popTA = new javax.swing.JTextArea();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        addBTN1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        artistTF1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        titleTF1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,11 +94,13 @@ public class MusicGUI extends javax.swing.JFrame {
         });
         jPanel2.add(deleteBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Artist:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
         jPanel2.add(artistTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 130, 30));
         jPanel2.add(titleTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 130, 30));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Title:");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
@@ -111,13 +126,14 @@ public class MusicGUI extends javax.swing.JFrame {
                 moveBTNActionPerformed(evt);
             }
         });
-        jPanel2.add(moveBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, -1, -1));
+        jPanel2.add(moveBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, -1, -1));
 
         genreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pop", "Rap" }));
-        jPanel2.add(genreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 130, 30));
+        jPanel2.add(genreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 130, 30));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Genre:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, -1, -1));
 
         searchBTN.setText("Search");
         searchBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +152,11 @@ public class MusicGUI extends javax.swing.JFrame {
         });
         jPanel2.add(createBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, -1, -1));
 
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pic/background.jpeg"))); // NOI18N
+        jLabel10.setText("jLabel10");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 530));
+
         jTabbedPane1.addTab("Liked Songs", jPanel2);
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,7 +165,7 @@ public class MusicGUI extends javax.swing.JFrame {
         rapTA.setRows(5);
         jScrollPane1.setViewportView(rapTA);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 770, 250));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 450, 250));
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 0));
 
@@ -170,12 +191,38 @@ public class MusicGUI extends javax.swing.JFrame {
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 100));
 
+        addBTN2.setText("Add");
+        addBTN2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBTN2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(addBTN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, -1, -1));
+
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Artist:");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
+        jPanel3.add(artistTF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 130, 30));
+
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Title:");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
+        jPanel3.add(titleTF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 130, 30));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pic/background.jpeg"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 870, 440));
+
         jTabbedPane1.addTab("Rap", jPanel3);
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         popTA.setColumns(20);
         popTA.setRows(5);
         popTA.setPreferredSize(new java.awt.Dimension(200, 90));
         jScrollPane2.setViewportView(popTA);
+
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 139, 428, 251));
 
         jPanel5.setBackground(new java.awt.Color(255, 153, 0));
 
@@ -199,24 +246,29 @@ public class MusicGUI extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 772, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
-        );
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        addBTN1.setText("Add");
+        addBTN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBTN1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(addBTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Artist:");
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
+        jPanel4.add(artistTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 130, 30));
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Title:");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+        jPanel4.add(titleTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 130, 30));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pic/background.jpeg"))); // NOI18N
+        jLabel12.setText("jLabel12");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 870, 440));
 
         jTabbedPane1.addTab("Pop", jPanel4);
 
@@ -280,6 +332,29 @@ public class MusicGUI extends javax.swing.JFrame {
         playlist.createPlaylist();
     }//GEN-LAST:event_createBTNActionPerformed
 
+    private void addBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTN1ActionPerformed
+    if (artistTF1.getText().isEmpty() == true || titleTF1.getText().isEmpty() == true) {
+        JOptionPane.showMessageDialog(null , "Please enter the title and the artist.");
+    } else {
+        String title = titleTF1.getText();
+        String artist = artistTF1.getText();
+
+        // Create a new Music object
+        Music song = new Music(title, artist);
+
+        // Add the song to the JTextArea
+        popTA.append(song.toString() + "\n");
+
+        // Clear the text fields
+        titleTF1.setText("");
+        artistTF1.setText("");
+    }
+    }//GEN-LAST:event_addBTN1ActionPerformed
+
+    private void addBTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTN2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addBTN2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -317,16 +392,27 @@ public class MusicGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton addBTN;
+    public static javax.swing.JButton addBTN1;
+    public static javax.swing.JButton addBTN2;
     public static javax.swing.JTextField artistTF;
+    public static javax.swing.JTextField artistTF1;
+    public static javax.swing.JTextField artistTF2;
     private javax.swing.JButton countSongs;
     private javax.swing.JButton createBTN;
     private javax.swing.JButton deleteBTN;
     public static javax.swing.JComboBox<String> genreCB;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -342,5 +428,7 @@ public class MusicGUI extends javax.swing.JFrame {
     private javax.swing.JButton searchBTN;
     public static javax.swing.JTextField searchTF;
     public static javax.swing.JTextField titleTF;
+    public static javax.swing.JTextField titleTF1;
+    public static javax.swing.JTextField titleTF2;
     // End of variables declaration//GEN-END:variables
 }

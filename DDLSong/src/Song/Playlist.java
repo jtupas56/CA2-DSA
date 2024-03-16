@@ -24,6 +24,7 @@ public class Playlist implements Interface {
     private int size;
 
     Playlist() {
+
         head = null;
         last = null;
         size = 0;
@@ -34,10 +35,9 @@ public class Playlist implements Interface {
     public boolean isEmpty() {
         return (size == 0);
     }
-    
 
     private void setCurrent(int index) {
-        curr = head; 
+        curr = head;
         for (int i = 1; i < index; i++) {
             curr = curr.getNext();
         }
@@ -45,7 +45,7 @@ public class Playlist implements Interface {
 
     @Override
     public void addMusic() {
-        int index = size + 1;
+        int index = size;
         String title = titleTF.getText();
         String artist = artistTF.getText();
         Music song = new Music(title, artist);
@@ -96,13 +96,6 @@ public class Playlist implements Interface {
     }
 
     @Override
-    public Object get() {
-        int index = size;
-        setCurrent(index);
-        return curr.getElement();
-    }
-
-    @Override
     public void removeMusic() {
         if (!isEmpty()) {
             Node prevLast = last.getPrev();
@@ -122,13 +115,21 @@ public class Playlist implements Interface {
     @Override
     public void moveToGenre() {
         if (!isEmpty()) {
-            Music song = (Music) get();
+            Music song = (Music) last.getElement(); // get the last song
             String selectedGenre = (String) genreCB.getSelectedItem();
             if ("Rap".equals(selectedGenre)) {
-                rapTA.setText(song.toString());
+                rapTA.append(song.toString() + "\n");
             } else if ("Pop".equals(selectedGenre)) {
-                popTA.setText(song.toString());
+                popTA.append(song.toString() + "\n");
             }
+            Node prevLast = last.getPrev();
+            if (prevLast != null) {
+                prevLast.setNext(null);
+            } else {
+                head = null;
+            }
+            last = prevLast;
+            size--;
             JOptionPane.showMessageDialog(null, "Item is successfully moved");
         } else {
             JOptionPane.showMessageDialog(null, "The playlist is already empty.");
