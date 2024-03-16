@@ -17,6 +17,5 @@ public class App {
         MusicGUI gui = new MusicGUI () ;
         gui.setVisible(true);
     }
-    
-
+   
 }

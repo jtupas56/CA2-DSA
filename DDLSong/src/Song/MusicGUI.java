@@ -35,19 +35,21 @@ public class MusicGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         addBTN = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        deleteBTN = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         artistTF = new javax.swing.JTextField();
         titleTF = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        printMusics = new javax.swing.JButton();
+        countSongs = new javax.swing.JButton();
         moveBTN = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        likedSongTA = new javax.swing.JTextArea();
+        genreCB = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        searchBTN = new javax.swing.JButton();
+        searchTF = new javax.swing.JTextField();
+        createBTN = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -55,12 +57,9 @@ public class MusicGUI extends javax.swing.JFrame {
         rapTA = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        popTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane1.addTab("tab1", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -72,8 +71,13 @@ public class MusicGUI extends javax.swing.JFrame {
         });
         jPanel2.add(addBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
 
-        jButton2.setText("Delete");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
+        deleteBTN.setText("Delete");
+        deleteBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBTNActionPerformed(evt);
+            }
+        });
+        jPanel2.add(deleteBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
 
         jLabel2.setText("Artist:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
@@ -83,11 +87,21 @@ public class MusicGUI extends javax.swing.JFrame {
         jLabel3.setText("Title:");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
-        jButton5.setText("Print");
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, -1, -1));
+        printMusics.setText("Print");
+        printMusics.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printMusicsActionPerformed(evt);
+            }
+        });
+        jPanel2.add(printMusics, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, -1, -1));
 
-        jButton6.setText("Size");
-        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
+        countSongs.setText("Size");
+        countSongs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                countSongsActionPerformed(evt);
+            }
+        });
+        jPanel2.add(countSongs, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
 
         moveBTN.setText("Move");
         moveBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -95,13 +109,30 @@ public class MusicGUI extends javax.swing.JFrame {
                 moveBTNActionPerformed(evt);
             }
         });
-        jPanel2.add(moveBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 420, -1, -1));
+        jPanel2.add(moveBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 50, -1, -1));
 
-        likedSongTA.setColumns(20);
-        likedSongTA.setRows(5);
-        jScrollPane3.setViewportView(likedSongTA);
+        genreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pop", "Rap" }));
+        jPanel2.add(genreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 50, 130, 30));
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 330, 120));
+        jLabel1.setText("Genre:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, -1, -1));
+
+        searchBTN.setText("Search");
+        searchBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBTNActionPerformed(evt);
+            }
+        });
+        jPanel2.add(searchBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 150, -1, -1));
+        jPanel2.add(searchTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, 120, 30));
+
+        createBTN.setText("Create Playlist");
+        createBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createBTNActionPerformed(evt);
+            }
+        });
+        jPanel2.add(createBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, -1, -1));
 
         jTabbedPane1.addTab("Liked Songs", jPanel2);
 
@@ -121,9 +152,9 @@ public class MusicGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Rap", jPanel3);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        popTA.setColumns(20);
+        popTA.setRows(5);
+        jScrollPane2.setViewportView(popTA);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -171,6 +202,39 @@ public class MusicGUI extends javax.swing.JFrame {
         playlist.moveToGenre();
     }//GEN-LAST:event_moveBTNActionPerformed
 
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+        if (playlist.isEmpty()) {
+            JOptionPane.showMessageDialog(null , "The playlist is empty");
+        } else {
+            playlist.removeMusic();
+        }
+    }//GEN-LAST:event_deleteBTNActionPerformed
+
+    private void countSongsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_countSongsActionPerformed
+        if (playlist.isEmpty()) {
+            JOptionPane.showMessageDialog(null , "The playlist is empty");
+        } else {
+            int count = playlist.countMusic();
+            JOptionPane.showMessageDialog(null, "There are " + count + " songs in the playlist.");
+        }
+    }//GEN-LAST:event_countSongsActionPerformed
+
+    private void printMusicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printMusicsActionPerformed
+    if (playlist.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "The playlist is empty.");
+    } else {
+        playlist.printList();
+    }
+    }//GEN-LAST:event_printMusicsActionPerformed
+
+    private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
+        playlist.searchMusic();
+    }//GEN-LAST:event_searchBTNActionPerformed
+
+    private void createBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBTNActionPerformed
+        playlist.createPlaylist();
+    }//GEN-LAST:event_createBTNActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -209,25 +273,27 @@ public class MusicGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton addBTN;
     public static javax.swing.JTextField artistTF;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton countSongs;
+    private javax.swing.JButton createBTN;
+    private javax.swing.JButton deleteBTN;
+    public static javax.swing.JComboBox<String> genreCB;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea2;
-    public static javax.swing.JTextArea likedSongTA;
     private javax.swing.JButton moveBTN;
+    public static javax.swing.JTextArea popTA;
+    private javax.swing.JButton printMusics;
     public static javax.swing.JTextArea rapTA;
+    private javax.swing.JButton searchBTN;
+    public static javax.swing.JTextField searchTF;
     public static javax.swing.JTextField titleTF;
     // End of variables declaration//GEN-END:variables
 }

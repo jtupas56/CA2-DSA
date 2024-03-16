@@ -16,5 +16,6 @@ public interface Interface {
     public void addMusic(); 
     public void printList(); 
     public void moveToGenre(); 
-    public void RepeatPlaylist(); 
+    public void searchMusic(); 
+    public void createPlaylist(); 
 }
